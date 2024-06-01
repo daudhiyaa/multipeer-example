@@ -10,7 +10,6 @@
 		B4C213002C09815C00A87A9A /* DummyPlantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C212FF2C09815C00A87A9A /* DummyPlantData.swift */; };
 		B4E7906F2C081470000755B2 /* MultipeerExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E7906E2C081470000755B2 /* MultipeerExampleApp.swift */; };
 		B4E790712C081470000755B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E790702C081470000755B2 /* ContentView.swift */; };
-		B4E790732C081470000755B2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E790722C081470000755B2 /* Item.swift */; };
 		B4E790752C081472000755B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E790742C081472000755B2 /* Assets.xcassets */; };
 		B4E790782C081472000755B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E790772C081472000755B2 /* Preview Assets.xcassets */; };
 		B4E790802C081750000755B2 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E7907F2C081750000755B2 /* Plant.swift */; };
@@ -19,11 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4915D6C2C0BBD4500839C5C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B4C212FF2C09815C00A87A9A /* DummyPlantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyPlantData.swift; sourceTree = "<group>"; };
 		B4E7906B2C081470000755B2 /* MultipeerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultipeerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E7906E2C081470000755B2 /* MultipeerExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerExampleApp.swift; sourceTree = "<group>"; };
 		B4E790702C081470000755B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B4E790722C081470000755B2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		B4E790742C081472000755B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4E790772C081472000755B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B4E7907F2C081750000755B2 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
@@ -43,9 +42,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4915D6A2C0BBCEB00839C5C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B4C212FF2C09815C00A87A9A /* DummyPlantData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B4915D6B2C0BBD0F00839C5C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B4E790812C0818F8000755B2 /* ExampleMultipeerSession.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		B4E790622C081470000755B2 = {
 			isa = PBXGroup;
 			children = (
+				B4915D6C2C0BBD4500839C5C /* README.md */,
 				B4E7906D2C081470000755B2 /* MultipeerExample */,
 				B4E7906C2C081470000755B2 /* Products */,
 			);
@@ -62,15 +78,15 @@
 		B4E7906D2C081470000755B2 /* MultipeerExample */ = {
 			isa = PBXGroup;
 			children = (
+				B4E7906E2C081470000755B2 /* MultipeerExampleApp.swift */,
 				B4E790702C081470000755B2 /* ContentView.swift */,
+				B4915D6A2C0BBCEB00839C5C /* Data */,
 				B4E790852C08230C000755B2 /* View */,
 				B4E7907E2C081737000755B2 /* Model */,
-				B4E7906E2C081470000755B2 /* MultipeerExampleApp.swift */,
-				B4E790812C0818F8000755B2 /* ExampleMultipeerSession.swift */,
+				B4915D6B2C0BBD0F00839C5C /* Utils */,
 				B4E790742C081472000755B2 /* Assets.xcassets */,
 				B4E790862C083309000755B2 /* Info.plist */,
 				B4E790762C081472000755B2 /* Preview Content */,
-				B4C212FF2C09815C00A87A9A /* DummyPlantData.swift */,
 			);
 			path = MultipeerExample;
 			sourceTree = "<group>";
@@ -86,7 +102,6 @@
 		B4E7907E2C081737000755B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B4E790722C081470000755B2 /* Item.swift */,
 				B4E7907F2C081750000755B2 /* Plant.swift */,
 			);
 			path = Model;
@@ -175,7 +190,6 @@
 				B4E790822C0818F8000755B2 /* ExampleMultipeerSession.swift in Sources */,
 				B4E790892C083BD7000755B2 /* ListPairView.swift in Sources */,
 				B4E790802C081750000755B2 /* Plant.swift in Sources */,
-				B4E790732C081470000755B2 /* Item.swift in Sources */,
 				B4E7906F2C081470000755B2 /* MultipeerExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

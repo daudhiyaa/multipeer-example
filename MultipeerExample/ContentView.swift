@@ -61,19 +61,4 @@ struct ContentView: View {
             )
         }
     }
-
-    private func addPlant() {
-        withAnimation {
-            let newPlant = Plant(name: "", desc: "", location: "")
-            modelContext.insert(newPlant)
-        }
-    }
-
-    private func deletePlants(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(plants[index])
-            }
-        }
-    }
 }
