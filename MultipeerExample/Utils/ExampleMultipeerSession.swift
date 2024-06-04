@@ -49,6 +49,7 @@ class ExampleMultipeerSession: NSObject, ObservableObject {
     
     func sendPlant(plant: Plant) {
         if !session.connectedPeers.isEmpty {
+            self.receivedPlant = plant
             log.info("sendPlant: \(String(describing: plant.name)) to \(self.session.connectedPeers[0].displayName)")
             do {
                 try session.send(plant.name.data(using: .utf8)!, toPeers: session.connectedPeers, with: .reliable)

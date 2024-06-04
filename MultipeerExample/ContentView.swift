@@ -13,7 +13,7 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var plants: [Plant]
     
-    @State var multipeerSession: ExampleMultipeerSession = ExampleMultipeerSession(username: UIDevice.current.name)
+    @StateObject var multipeerSession: ExampleMultipeerSession = ExampleMultipeerSession(username: UIDevice.current.name)
 
     @State private var isSheetPresented = false
     
@@ -23,13 +23,6 @@ struct ContentView: View {
         NavigationStack {
             List {
                 Section{
-                    Button("Refresh") {
-                        for plant in listOfPlants {
-                            if(plant.name == multipeerSession.receivedPlant.name) {
-                                modelContext.insert(plant)
-                            }
-                        }
-                    }
                     Button("Delete All") {
                         for plant in plants {
                             modelContext.delete(plant)
@@ -59,6 +52,13 @@ struct ContentView: View {
                     }
                 }
             )
+        }
+        .onChange(of: multipeerSession.receivedPlant) {
+            for plant in listOfPlants {
+                if(plant.name == multipeerSession.receivedPlant.name) {
+                    modelContext.insert(plant)
+                }
+            }
         }
     }
 }
